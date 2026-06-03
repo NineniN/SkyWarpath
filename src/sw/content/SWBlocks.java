@@ -96,6 +96,7 @@ public class SWBlocks {
             //--tekpose
             axis,component,gear,squint;
 
+
     public static void load(){
         //Environment
         heavySnow = new StaticWall("heavy-snow");
@@ -1485,40 +1486,7 @@ public class SWBlocks {
             );
         }};
 
-        ew = new PowerTurret("ew"){{
-            requirements(Category.turret,ItemStack.with(Items.titanium,2500));
-            consumePower(5);
 
-            health = 1350;
-            armor = 10;
-            size = 4;
-
-            range = 272;
-            rotateSpeed = 1.3f;
-
-
-            shootType = new ArtilleryBulletType(20,1750){{
-                splashDamage = 1350;
-                splashDamageRadius = 20;
-
-                despawnEffect = SWFx.fan;
-            }};
-        }
-            ArtilleryBulletType ancestor = new ArtilleryBulletType(20,31250){{
-                splashDamage = 7150;
-                splashDamageRadius = 80;
-
-                reloadMultiplier = 0.2f;
-            }};
-
-            @Override
-            public void setStats() {
-                super.setStats();
-                stats.add(Stat.ammo, StatValues.ammo(ObjectMap.of(this,ancestor)));
-            }
-
-
-        };
         starFall = new PowerTurret("star-fall"){{
             requirements(Category.turret,ItemStack.with(Items.titanium,2500));
             consumePower(5);
